@@ -9,7 +9,7 @@
     "test": "mocha --compilers js:babel-core/register --recursive",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint .",
-    "lint:watch": "nodemon -e js -x \"npm run lint\"",    
+    "lint:watch": "nodemon -e js -x \"npm run lint\"",
     "sass:build": "node-sass --source-map true --include-path styles styles/main.scss .tmp/styles/main.css",
     "sass:watch": "nodemon -e scss -x \"npm run sass:build\"",
     "browsersync": "browser-sync start -f '**/*.js,**/*.html,.tmp/styles/*.css'"
@@ -48,6 +48,7 @@
     "test"
   ],
   "dependencies": {
+    "backbone": "^1.3.3",
     "jquery": "^3.0.0"
   }
 }
