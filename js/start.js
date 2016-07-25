@@ -7,6 +7,7 @@ import PageNav from './views/PageNav.js';
 import LoadingModal from './views/modals/Loading';
 import SimpleMessageModal from './views/modals/SimpleMessage';
 import Profile from './models/Profile';
+import Settings from './models/Settings';
 
 // Until we have legitimate profile models interfacing with the server,
 // we'll create a dummy "users" collection with a dummy set of  "user" models
@@ -65,6 +66,10 @@ $.get(app.getServerUrl('ob/config')).done((data) => {
       app.pageNav.navigable = true;
       Backbone.history.start();
       app.loadingModal.close();
+
+      const settings = new Settings();
+      console.log('settings');
+      window.settings = settings;
     }).fail((jqXhr) => {
       if (jqXhr.status === 400) {
         // for now we'll consider 400 - Bad Request to mean
