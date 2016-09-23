@@ -1,0 +1,21 @@
+name: openbazaar
+version: '2.0.0'
+summary: 2.0 Desktop Client for OpenBazaar
+description: |
+  OpenBazaar is a different way to do online commerce. Instead of visiting a
+  website, you download and install a program on your computer that directly
+  connects you to other people looking to buy and sell goods and services with
+  you. This peer to peer network isn't controlled by any company or organization
+  - it's a community of people who want to engage in trade directly with each
+  other.
+confinement: strict
+grade: stable
+
+apps:
+  openbazaar:
+    command: npm start
+
+parts:
+  openbazaar:
+    source: .
+    plugin: nodejs
