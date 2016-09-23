@@ -13,9 +13,11 @@ grade: stable
 
 apps:
   openbazaar:
-    command: npm start
+    command: sh -c \"cd $SNAP/lib/node_modules/openbazaar-desktop && npm run-script start-app\"
+    plugs: [network]
 
 parts:
   openbazaar:
     source: .
     plugin: nodejs
+    node-packages: [cross-env, electron]
